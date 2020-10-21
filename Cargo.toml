@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 structopt = "0.3"
 tvm = { path = "tvm/rust/tvm" }
+anyhow = "1.0"

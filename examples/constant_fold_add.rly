@@ -1,0 +1,4 @@
+#[version = "0.5.0"]
+fn main(%x: int32) {
+    2 + 2 + %x
+}

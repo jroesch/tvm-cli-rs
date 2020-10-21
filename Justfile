@@ -26,12 +26,12 @@ test: build
     cargo test
 
 # Run Cargo with all TVM environent variables.
-run: build
+run *ARGS: build
     #!/usr/bin/env bash
     set -e
     export LD_LIBRARY_PATH="$PWD/tvm/build/"
     export PYTHONPATH="$PWD/tvm/python:$PWD/tvm/topi/python:${PYTHONPATH}"
-    cargo run
+    cargo run {{ARGS}}
 
 # Clean TVM and native build artifacts.
 clean:

@@ -546,6 +546,7 @@ dependencies = [
 name = "tvm-cli-rs"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "structopt",
  "tvm",
 ]
