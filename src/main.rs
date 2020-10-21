@@ -19,12 +19,11 @@ struct Opt {
     output: Option<PathBuf>,
 }
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     let opt = Opt::from_args();
     let output: PathBuf = opt.output.unwrap_or(Path::new("output.rly").into());
     match &opt.pass_name[..] {
-        "const_eval_no_pass" => const_eval_no_pass::run(opt.input, output).expect(),
-        _ => panic!()
+        "const_eval_no_pass" => const_eval_no_pass::run(opt.input, output),
+        _ => Err(anyhow::anyhow!("unknown pass name")),
     }
-    println!("{:#?}", opt);
 }

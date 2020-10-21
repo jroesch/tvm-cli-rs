@@ -1,3 +1,4 @@
+# Setup and Building
 To build this example, first install Just.
 ```
 cargo install just
@@ -30,3 +31,11 @@ in the Justfile, and tweak the CMake config in `config/`.
 
 There is an unfinished branch with direct installation of TVM via `build.rs` and CMake
 but it is unfinished. This Justfile provides the necessary code to get started.
+
+### Running the Examples
+
+For now there is one semi-working example which I will continue to polish.
+
+```
+cargo run -- --input examples/constant_fold_add.rly --pass-name const_eval_no_pass
+```
